@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Invoice Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Invoice Tracker</h1>
+      <button id="settingsButton" class="settings-button">⚙️</button>
+    </div>
+    <div class="tabs">
+      <button class="tab-button active" data-tab="this-week">This Week</button>
+      <button class="tab-button" data-tab="last-week">Last Week</button>
+      <button class="tab-button" data-tab="last-pay-period">Last Pay Period</button>
+      <button class="tab-button" data-tab="edit-log">Edit Log</button>
+      <button class="tab-button" data-tab="contracts">Contracts</button>
+    </div>
+
+    <div id="this-week" class="tab-content active">
+      <!-- Existing content -->
+    </div>
+
+    <!-- Other existing tabs -->
+
+    <div id="contracts" class="tab-content">
+      <h2>Manage Contracts</h2>
+      <div id="contractsList"></div>
+      <button id="addContractButton">Add New Contract</button>
+    </div>
+  </div>
+
+  <div id="settingsModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Contract Settings</h2>
+      <form id="contractForm">
+        <input type="hidden" id="contractId">
+        <label for="contractName">Contract Name:</label>
+        <input type="text" id="contractName" required>
+        <label for="minHours">Minimum Hours per Week:</label>
+        <input type="number" id="minHours" required>
+        <label for="invoiceEmail">Invoice Email:</label>
+        <input type="email" id="invoiceEmail" required>
+        <button type="submit">Save Contract</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
